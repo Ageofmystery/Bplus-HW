@@ -4,7 +4,6 @@
 //initialize
 html, body
   width 100%
-  height 100%
   font-size 16px
 .wrapper
   width 100%
@@ -64,6 +63,8 @@ address
   .template-header
     height 80px
     background $col-white
+    position relative
+    z-index 1000
     .navbar-toggle
       border 1px solid $col-blue
       margin 20px
@@ -71,10 +72,13 @@ address
       background $col-orange
     ul.navbar-nav.nav
       padding 14px 0
+      background $col-white
       a:not(.btn-blue)
         font 400 15px $font-karla
         color $col-gray
         letter-spacing 1px
+        @media (max-width 1200px)
+          padding 15px 5px
         &:hover
           color $col-black
           background $col-orange
@@ -83,6 +87,7 @@ address
       padding 0 5px
     button.dropdown-toggle
       font 400 15px $font-karla
+      width 100%
       color $col-gray
       padding 15px
       background none
@@ -94,3 +99,41 @@ address
       &:focus
         border-radius 10px 10px 0 0
 //------------------------------
+.image-carousel
+  position relative
+  .item
+    height 750px
+    &:before
+      content ""
+      position absolute
+      display block
+      top 0
+      left 0
+      right 0
+      bottom 0
+    &:first-child:before
+      background url("../img/home-img-slide-1.jpg") no-repeat center top
+    &:nth-child(2):before
+      background url("../img/home-img-slide-2.jpg") no-repeat center top
+    &:last-child:before
+      background url("../img/home-img-slide-3.jpg") no-repeat center top
+    h2
+      font 700 48px $font-raleway
+      color $col-white
+    p
+      font 700 14px/36px $font-raleway
+      color $col-white
+      letter-spacing 1px
+  li,li.active
+    border 3px solid $col-white
+    width 16px
+    height 16px
+    &.active
+      background $col-white
+      margin 1px
+  .item.active, .next, .prev
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+///-----------------------------
