@@ -1,2 +1,96 @@
 @import 'nib'
 @require '__variables'
+
+//initialize
+html, body
+  width 100%
+  height 100%
+  font-size 16px
+.wrapper
+  width 100%
+  height 100%
+  overflow hidden
+.row
+  &:after, &:before
+    display none
+//universal
+address
+  margin 0
+.active-nav
+  color $col-black !important
+.btn-blue
+  color $col-white
+  background $col-blue
+  font 400 15px $font-karla
+  letter-spacing 1px
+  border-radius 25px
+  padding 12px 25px !important
+  &:hover
+    background $col-blue
+
+//-------------------------
+.prime-header
+  .logo
+    @media (max-width 768px)
+      padding-left 20px
+  .template-info
+    background $col-whiteblue-10
+    .template-name
+      color $col-gray
+      font 400 13px/50px $font-karla
+      margin 0
+    .phone-contact,.email-contact
+      padding 0 25px 0 25px
+      a
+        text-decoration none
+        color $col-gray
+        letter-spacing 1px
+        font 400 13px/50px $font-karla
+        &:hover
+          color $col-orange
+      span
+        line-height 24px
+        padding-right 8px
+      .fa-mobile
+        font-size 25px
+        vertical-align -20%
+      .fa-envelope-o
+        font-size 20px
+        vertical-align -10%
+    .phone-contact
+      border-right 1px solid $col-bordergray
+      a
+        font-size 14px
+  .template-header
+    height 80px
+    background $col-white
+    .navbar-toggle
+      border 1px solid $col-blue
+      margin 20px
+    .icon-bar
+      background $col-orange
+    ul.navbar-nav.nav
+      padding 14px 0
+      a:not(.btn-blue)
+        font 400 15px $font-karla
+        color $col-gray
+        letter-spacing 1px
+        &:hover
+          color $col-black
+          background $col-orange
+          border-radius 10px
+    .fa-angle-down
+      padding 0 5px
+    button.dropdown-toggle
+      font 400 15px $font-karla
+      color $col-gray
+      padding 15px
+      background none
+      border none
+      &:hover
+        color $col-black
+        background $col-orange
+        border-radius 10px
+      &:focus
+        border-radius 10px 10px 0 0
+//------------------------------

@@ -1,40 +1,3 @@
-vendor(prop, args)
-  -webkit-{prop} args
-  -moz-{prop} args
-  -ms-{prop} args
-  -o-{prop} args
-  {prop} args
-
-border-radius()
-  vendor 'border-radius', arguments
-
-box-shadow()
-  vendor 'box-shadow', arguments
-
-transition()
-  vendor 'transition', arguments
-
-transition-timing-function()
-  vendor 'transition-timing-function', arguments
-
-transform()
-  vendor 'transform', arguments
-
-transform-origin()
-  vendor 'transform-origin', arguments
-
-animation()
-  vendor 'animation', arguments
-
-filter()
-  vendor 'filter', arguments
-
-user-select()
-  vendor 'user-select', arguments
-
-background-size()
-  vendor 'background-size', arguments
-
 placeholder-style(prop, value)
   &::-webkit-input-placeholder
     {prop} value
@@ -45,5 +8,3 @@ placeholder-style(prop, value)
   &:-ms-input-placeholder
     {prop} value
 
-border-radius(value)
-  border-radius value
