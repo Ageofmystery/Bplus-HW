@@ -16,7 +16,7 @@ html, body
 address
   margin 0
 .active-nav
-  color $col-black !important
+  color $col-blackblue !important
 .btn-blue
   color $col-white
   background $col-blue
@@ -26,7 +26,18 @@ address
   padding 12px 25px !important
   &:hover
     background $col-blue
-
+.article-head
+  font 700 30px/24px $font-raleway
+  color $col-blackblue
+.article-subhead
+  font 400 18px/24px $font-karla
+  color $col-blackblue
+.article-desc
+  font 400 14px/24px $font-osans
+  color $col-darkgray
+.feature-head
+  font 500 20px/24px $font-raleway
+  color $col-blackblue
 //-------------------------
 .prime-header
   .logo
@@ -73,6 +84,8 @@ address
     ul.navbar-nav.nav
       padding 14px 0
       background $col-white
+      li > button
+        width 100%
       a:not(.btn-blue)
         font 400 15px $font-karla
         color $col-gray
@@ -137,3 +150,48 @@ address
     justify-content center
     align-items center
 ///-----------------------------
+.begin-startup
+  padding-top 100px
+  .features-block
+    list-style none
+    @media (max-width 992px)
+      margin-top 50px
+    &+button
+      margin-top 40px
+    li
+      position relative
+      h5,p
+        margin-left 97px
+      .feat-ico
+        width 67px
+        height 67px
+        background $col-whiteblue-10
+        position absolute
+        &:before
+          content ""
+          display block
+          background url("../img/features-icosprite.png") no-repeat
+      &:hover > .feat-ico
+        background $col-orange
+      &:nth-child(1)
+        .feat-ico:before
+          background-position -5px -5px
+          width 37px
+          height 32px
+        &:hover > .feat-ico:before
+          background-position: -52px -5px;
+      &:nth-child(2)
+        .feat-ico:before
+          width: 31px;
+          height: 38px;
+          background-position: -99px -5px;
+        &:hover > .feat-ico:before
+          background-position: -140px -5px;
+      &:nth-child(3)
+        .feat-ico:before
+          width: 27px;
+          height: 44px;
+          background-position: -181px -5px;
+        &:hover > .feat-ico:before
+          background-position: -218px -5px;
+//----------------------
