@@ -15,6 +15,8 @@ html, body
 //universal
 address
   margin 0
+ul
+  list-style none
 .active-nav
   color $col-blackblue !important
 .btn-blue
@@ -50,6 +52,23 @@ address
     content ""
     display block
     background url("../img/features-icosprite.png") no-repeat
+.name-orange
+  color $col-orange
+  font 400 14px/20px $font-karla
+  margin-left 100px
+.name-author
+  font 400 14px/20px $font-karla
+  color $col-blackblue
+.label-recommend
+  display block
+  transform rotate(-45deg)
+  font 400 12px/24px $font-karla
+  color $col-white
+  background $col-orange
+  padding 6px 80px
+  position absolute
+  left -80px
+  top 15px
 //-------------------------
 .prime-header
   .logo
@@ -165,7 +184,6 @@ address
 .begin-startup
   padding-top 100px
   .features-block
-    list-style none
     @media (max-width 992px)
       margin-top 50px
     &+button
@@ -216,10 +234,6 @@ address
   .cite-inner
     padding-right 40px
     border-right 1px solid $col-bordergray
-  .name-orange
-    color $col-orange
-    font 400 14px/20px $font-karla
-    margin-left 100px
   figure
     margin 0 13px 0 13px
     .orange-active
@@ -265,7 +279,6 @@ address
     border 109px solid transparent
     border-bottom 109px solid $col-orange
   .features-block
-    list-style none
     padding 0
     li
       position relative
@@ -325,4 +338,75 @@ address
           background-position: -725px -5px;
         &:hover > .feat-ico:before
           background-position: -773px -5px;
+//--------------------------------
+.price-list-main
+  padding 100px 0 90px
+  .price-list
+    ul
+      margin-top 40px
+      li
+        background $col-white
+        border 1px solid $col-whiteblue-10
+        width 262px
+        height 425px
+        position relative
+        overflow hidden
+        margin-bottom 20px
+        &:hover
+          box-shadow 0 0 100px rgba(228, 233, 237, 0.75)
+        button
+          margin-bottom 35px
+    p
+      margin 0
+    .price-name
+      font 700 20px/24px $font-raleway
+      color $col-blackblue
+      margin-top 30px
+    .price-term
+      color $col-gray-25
+      font 500 18px/24px $font-raleway
+      padding 20px 0
+      border-top 1px solid $col-whiteblue-10
+      border-bottom 1px solid $col-whiteblue-10
+      .symb
+        padding 21px 0
+        border-top 1px solid $col-orange
+        font 500 18px/24px $font-raleway
+        color $col-orange
+    .features
+      height 225px
+      padding 40px 0
+      > p
+        color $col-darkgray
+        font 400 15px/36px $font-osans
+//----------------------------------
+.our-team-main
+  padding 100px 0
+  background $col-whiteblue-10
+  .our-team
+    > ul
+      margin-top 40px
+      > li
+        background $col-white
+        width 262px
+        height 400px
+        margin-bottom 20px
+        &:hover
+          box-shadow 0 0 65px $col-teamhover
+        button
+          margin-bottom 35px
+    p
+      margin 0
+  .team-inner
+    padding 30px
+    ul
+      padding 0
+      margin 0
+      li
+        padding-right 15px
+        padding-top 10px
+        a
+          color $col-social
+          &:hover
+            color $col-blue
 //--------------------------------
