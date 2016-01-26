@@ -203,6 +203,32 @@ ul
     flex-direction column
     justify-content center
     align-items center
+  .carousel-indicators li
+    position relative
+    &:hover:not(.active) span
+      display block
+    .min-pre
+      display none
+      width 73px
+      height 73px
+      border-radius 50%
+      border 3px solid $col-white
+      position absolute
+      left -32px
+      bottom 30px
+      &:after
+        content ""
+        border 6px solid transparent
+        border-top 13px solid $col-white
+        position relative
+        top 78px
+        left 500px
+    &:first-child .min-pre
+      background url("../img/home-img-slide-1.jpg") no-repeat center top
+    &:nth-child(2) .min-pre
+      background url("../img/home-img-slide-2.jpg") no-repeat center top
+    &:last-child .min-pre
+      background url("../img/home-img-slide-3.jpg") no-repeat center bottom
 ///-----------------------------
 .begin-startup
   padding-top 100px
@@ -446,30 +472,29 @@ ul
   .container
     padding-bottom 80px
     border-bottom 1px solid $col-bordergray
+    &>*
+      position relative
+      z-index 2
     &:before
-      content ""
-      display block
-      background $col-orange
-      width 900px
-      height 260px
-      transform rotate(45deg)
-      position: absolute;
-      left: -225px;
-      top: 265px;
+      content: url("../img/foot-3ang-left.svg")
+      position absolute
+      width 453px
+      left 0
+      bottom 105px
+      z-index 1
   .container-fluid
     background $col-white
     position relative
-    z-index 2
+    &>*
+      position relative
+      z-index 2
     &:before
-      content ""
-      display block
-      background $col-blue
-      width 900px
-      height 260px
-      transform: rotate(-37deg);
-      position: absolute;
-      right: -170px;
-      bottom: -185px
+      content url("../img/foot-3ang-right.svg")
+      position absolute
+      right 0
+      z-index 1
+      bottom -5 px
+      width 502 px
     p.gray-nav
       padding 10px 0 55px
   .feature-head
@@ -505,6 +530,9 @@ ul
         border-radius 0
         background $col-blue
         border 1px solid $col-blue
+        &:hover
+          background $col-gray
+          border-color $col-gray
   ul
     padding 0
     margin 0
