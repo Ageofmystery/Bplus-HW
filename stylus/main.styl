@@ -541,3 +541,56 @@ ul
       letter-spacing 1px
       color $col-black
 //------------------------------
+.blog-greet-main
+  background url("../img/home-img-slide-1.jpg") no-repeat center 40%
+  height 310px
+  .blog-greet
+    > h2
+      font 700 48px $font-raleway
+      color $col-white
+    > p
+      font 700 14px/36px $font-raleway
+      color $col-white
+      letter-spacing 1px
+//----------------------------------
+.blog-container-main
+  padding 100px 0
+  .blog-block
+    padding-bottom 75px
+    box-sizing border-box
+    .blog-preview
+      > video,> audio
+        width 100%
+        max-width 828px
+    .blog-heading
+      margin 42px 0 37px
+      > .row
+        margin 15px 0 0
+      > .head-blog
+        font 700 24px/24px $font-raleway
+        text-decoration none
+        color $col-blackblue
+      .blog-txt-orange
+        font 400 15px $font-karla
+        color $col-orange
+        margin-bottom 0
+        > time, .blog-author
+          color $col-blackblue
+        &:first-child
+          padding-right 15px
+          border-right 1px solid $col-blackblue
+          margin-right 15px
+    &> button
+      margin-top 35px
+    &:not(:first-child)
+      padding 75px 0
+      border-top 1px solid $col-bordergray
+    .carousel-control
+      background-image none
+      > span
+        position absolute
+        top 50%
+        z-index 5
+        display inline-block
+        margin-top -10px
+//-----------------------------
