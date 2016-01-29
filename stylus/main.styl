@@ -554,9 +554,15 @@ ul
       letter-spacing 1px
 //----------------------------------
 .blog-container-main
-  padding 100px 0
+  padding 100px 0 0
+  .right-bar.col-lg-3
+    @media (max-width 1199px)
+      order -1
+  .blogs-inner
+    margin 0
+    padding 0
   .blog-block
-    padding-bottom 75px
+    padding 0 30px 75px 0
     box-sizing border-box
     .blog-preview
       > video,> audio
@@ -583,7 +589,7 @@ ul
     &> button
       margin-top 35px
     &:not(:first-child)
-      padding 75px 0
+      padding 75px 30px 75px 0
       border-top 1px solid $col-bordergray
     .carousel-control
       background-image none
@@ -593,4 +599,96 @@ ul
         z-index 5
         display inline-block
         margin-top -10px
+  .aside-block
+    &:not(:last-child)
+      margin-bottom 62px
+    .form-search
+      position relative
+      margin-bottom 25px
+      > input[type="search"]
+        padding 14px 18px
+        font 400 14px $font-karla
+        color $col-social
+        border 1px solid $col-bordergray
+        width 100%
+      > label
+        position absolute
+        right 18px
+        top 15px
+        color $col-darkgray
+    .aside-heading
+      font 500 20px/24px $font-raleway
+      color $col-blackblue
+      margin 24px 0
+    ul
+      margin 0
+      padding 0
+      position relative
+      li
+        margin 0
+    .cat-nav
+      text-decoration none
+      font 400 13px/36px $font-karla
+      letter-spacing 1px
+      display block
+      color $col-darkgray
+      > span
+        position absolute
+        right 0
+        line-height 36px
+      &:hover
+        color $col-orange
+    .post-prev
+      display block
+      width 67px
+      height 67px
+      background url("../img/blog-2-img.jpg") no-repeat center 35%
+    .post-head
+      font 700 15px $font-karla
+      color $col-blackblue
+      text-decoration none
+    .post-wrap
+      padding 11px 0 11px 30px
+    .post-desc
+      font 400 14px/24px $font-karla
+      color $col-orange
+      margin 0
+      > span
+        color $col-blackblue
+    &.post-block>ul>li:not(:last-child)
+      margin-bottom 30px
+    &.tags
+      ul>li
+        margin-bottom 10px
+      .aside-tag
+        display block
+        text-decoration none
+        padding 0 15px
+        max-height 40px
+        font 400 13px/40px $font-karla
+        letter-spacing 1px
+        color $col-white
+        background $col-blue
+        &:hover
+          background $col-blackblue
+  .blog-nav
+    clear both
+    border-bottom 1px solid $col-bordergray
+    padding-bottom 100px
+    .pg-link
+      font 700 18px/42px $font-karla
+      background $col-blue
+      color $col-white
+      width 43px
+      padding 0
+      border none
+      border-radius 0
+      text-align center
+      &:hover:not(.pg-bord)
+        background $col-orange
+    .pg-bord
+      background $col-white
+      color $col-blackblue
+    li:not(:last-child)>.pg-link
+      margin-right 10px
 //-----------------------------
