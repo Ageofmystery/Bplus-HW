@@ -82,6 +82,30 @@ ul
   &:hover
     text-decoration none
     color $col-black
+.blog-ul-list
+  margin 60px 0
+  padding-left 100px
+  > li
+    margin-bottom 25px
+    &> p
+      font 400 13px $font-karla
+      color $col-blackblue
+      letter-spacing 1px
+      &> span
+        color $col-orange
+        margin-right 16px
+.author-block
+  width 100%
+  display flex
+  align-items center
+  background $col-whiteblue-10
+  > figure
+    width 210px
+    min-height 190px
+  .article-desc
+    max-width 590px
+  .blog-txt-orange
+    margin-bottom 15px
 .soc-feed
   padding 0
   margin 0
@@ -92,6 +116,53 @@ ul
       color $col-social
       &:hover
         color $col-blue
+.blog-txt-orange
+  font 400 15px $font-karla
+  color $col-orange
+  margin-bottom 0
+  > time, .blog-author
+    color $col-blackblue
+  &:first-child
+    padding-right 15px
+    border-right 1px solid $col-blackblue
+    margin-right 15px
+.head-blog
+  font 700 24px/24px $font-raleway
+  text-decoration none
+  color $col-blackblue
+.comment
+  display flex
+  align-items center
+  position relative
+  > figure
+    margin-right 30px
+  .commenter-name
+    font 400 15px/22px $font-karla
+    color $col-blackblue
+    margin-bottom 0
+    &+span
+      margin 0 15px
+      line-height 22px
+  time
+    font 400 13px/22px $font-karla
+    color $col-blackblue
+    margin-bottom 0
+  .article-desc
+    margin-top 10px
+    margin-bottom 0
+  .comment-rep
+    text-decoration none
+    font 400 15px/22px $font-karla
+    color $col-orange
+    position absolute
+    top 45px
+    right 0
+    &:hover
+      color $col-blackblue
+  &.rep-1
+    margin-left 100px
+  &.rep-2
+    margin-left 150px
 //-------------------------
 .prime-header
   .logo
@@ -572,20 +643,6 @@ ul
       margin 42px 0 37px
       > .row
         margin 15px 0 0
-      > .head-blog
-        font 700 24px/24px $font-raleway
-        text-decoration none
-        color $col-blackblue
-      .blog-txt-orange
-        font 400 15px $font-karla
-        color $col-orange
-        margin-bottom 0
-        > time, .blog-author
-          color $col-blackblue
-        &:first-child
-          padding-right 15px
-          border-right 1px solid $col-blackblue
-          margin-right 15px
     &> button
       margin-top 35px
     &:not(:first-child)
@@ -692,3 +749,100 @@ ul
     li:not(:last-child)>.pg-link
       margin-right 10px
 //-----------------------------
+.blog-post
+  .blog-container-main>.container
+    border-bottom 1px solid $col-bordergray
+  .blog-block
+    border-bottom 1px solid $col-bordergray
+    .author-block
+      margin 55px 0 0
+      .blog-txt-orange
+        margin-right 0
+        padding-right 0
+        border-right none
+  .comments-block
+    padding 64px 0 90px
+  .comment
+    padding 45px 0
+    border-bottom 1px solid $col-bordergray
+  .new-comment
+    padding-bottom 100px
+  .new-comment-form
+    max-width 827px
+    margin 0
+    > input, textarea
+      max-width 406px
+      width 100%
+      padding 0 28px
+      background $col-whiteblue-10
+      font 400 13px/48px $font-karla
+      color $col-blackblue
+      margin-bottom 15px
+      border none
+      placeholder-style(text-transform, uppercase)
+      placeholder-style(color, $col-blackblue)
+      @media (max-width 1023px)
+        max-width 100%
+    > textarea
+      max-width 827px
+    &+button
+      margin-top 30px
+//-----------------------------
+.about-company
+  > .container
+    margin-top 100px
+  .article-head
+    margin-top 0
+  .article-desc
+    max-width 530px
+    margin-bottom 0
+    &:first-child
+      margin-right 75px
+  .about-desc
+    margin 45px 0 0
+    padding-bottom 70px
+    border-bottom 1px solid $col-bordergray
+  .our-badges
+    margin 75px 0 80px
+  .badge-in
+    position relative
+    .badge-digit
+      font 400 60px/45px $font-karla
+      color $col-blackblue
+    .badge-desc
+      font 400 14px/24px $font-karla
+      color $col-blackblue
+      letter-spacing 1px
+    > p
+      margin-left 85px
+    > .badge-ico
+      width 50px
+      height 50px
+      position absolute
+      left 0
+      top 0
+      &:before
+        content ""
+        display block
+        background $col-white url("../img/about-icosprite.png") no-repeat
+    &:nth-child(1)
+      .badge-ico:before
+        width: 40px;
+        height: 40px;
+        background-position: -5px -5px;
+    &:nth-child(2)
+      .badge-ico:before
+        width: 42px;
+        height: 30px;
+        background-position: -5px -55px;
+    &:nth-child(3)
+      .badge-ico:before
+        width: 40px;
+        height: 41px;
+        background-position: -57px -5px;
+    &:nth-child(4)
+      .badge-ico:before
+        width: 40px;
+        height: 40px;
+        background-position: -57px -56px;
+//---------------------------
