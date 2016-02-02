@@ -2,7 +2,7 @@
 @require 'mixin'
 @require '__variables'
 
-//initialize
+//-----------------------------------------------initialize
 html, body
   width 100%
   font-size 16px
@@ -13,15 +13,19 @@ html, body
 .row
   &:after, &:before
     display none
-//universal
 address
   margin 0
 ul
   list-style none
-.active-nav
+a, a:hover, a:focus
+  text-decoration none
+//----------------------------------------------universal
+.active-page-nav
   color $col-blackblue !important
+
 .col
   flex-direction column
+
 .btn-blue
   color $col-white
   background $col-blue
@@ -31,25 +35,47 @@ ul
   border-radius 25px
   padding 12px 25px !important
   &:hover
-    background $col-gray
+    background $col-orange
+    transition background .5s ease
+
 .btn-orange
   @extend .btn-blue
   background $col-orange
-.article-head
+  &:hover
+    background $col-blue
+
+.section-prime-head
+  font 700 48px $font-raleway
+  color $col-white
+
+.section-prime-subhead
+  font 700 14px/36px $font-raleway
+  color $col-white
+  letter-spacing 1px
+
+.section-head
   font 700 30px/24px $font-raleway
   color $col-blackblue
-.article-subhead
+
+.section-subhead
   font 400 18px/24px $font-karla
   color $col-blackblue
+
+.article-head
+  font 500 20px/24px $font-raleway
+  color $col-blackblue
+  &:hover
+    color $col-orange
+    transition color .5s ease
+
 .article-desc
   font 400 14px/24px $font-osans
   color $col-darkgray
-.feature-head
-  font 500 20px/24px $font-raleway
-  color $col-blackblue
+
 .article-desc-italic
   font italic 15px/24px $font-lora
   color $col-darkgray
+
 .feat-ico
   width 67px
   height 67px
@@ -59,12 +85,15 @@ ul
     content ""
     display block
     background url("../img/features-icosprite.png") no-repeat
+
 .name-orange
   color $col-orange
   font 400 14px/20px $font-karla
+
 .name-author
   font 400 14px/20px $font-karla
   color $col-blackblue
+
 .label-recommend
   display block
   transform rotate(-45deg)
@@ -75,13 +104,14 @@ ul
   position absolute
   left -80px
   top 15px
+
 .gray-nav
   font 400 14px/35px $font-karla
   color $col-gray
   letter-spacing 1px
-  &:hover
-    text-decoration none
+  &:hover:not(.a-info)
     color $col-black
+
 .blog-ul-list
   margin 60px 0
   padding-left 100px
@@ -94,6 +124,7 @@ ul
       &> span
         color $col-orange
         margin-right 16px
+
 .author-block
   width 100%
   display flex
@@ -106,6 +137,7 @@ ul
     max-width 590px
   .blog-txt-orange
     margin-bottom 15px
+
 .soc-feed
   padding 0
   margin 0
@@ -116,6 +148,7 @@ ul
       color $col-social
       &:hover
         color $col-blue
+
 .blog-txt-orange
   font 400 15px $font-karla
   color $col-orange
@@ -126,13 +159,13 @@ ul
     padding-right 15px
     border-right 1px solid $col-blackblue
     margin-right 15px
+
 .head-blog
   font 700 24px/24px $font-raleway
-  text-decoration none
   color $col-blackblue
   &:hover
-    text-decoration none
     color $col-gray
+
 .comment
   display flex
   align-items center
@@ -154,7 +187,6 @@ ul
     margin-top 10px
     margin-bottom 0
   .comment-rep
-    text-decoration none
     font 400 15px/22px $font-karla
     color $col-orange
     position absolute
@@ -183,12 +215,12 @@ ul
     .phone-contact,.email-contact
       padding 0 25px 0 25px
       a
-        text-decoration none
         color $col-gray
         letter-spacing 1px
         font 400 13px/50px $font-karla
         &:hover
           color $col-orange
+          transition all .4s ease
       span
         line-height 24px
         padding-right 8px
@@ -231,6 +263,7 @@ ul
           color $col-black
           background $col-orange
           border-radius 6px
+          transition all .6s ease
     .fa-angle-down
       padding 0 5px
     button.dropdown-toggle
@@ -244,6 +277,7 @@ ul
         color $col-black
         background $col-orange
         border-radius 6px
+        transition all .6s ease
       &:focus
         border-radius 6px 6px 0 0
 //------------------------------
@@ -265,13 +299,6 @@ ul
       background url("../img/home-img-slide-2.jpg") no-repeat center top
     &:last-child:before
       background url("../img/home-img-slide-3.jpg") no-repeat center top
-    h2
-      font 700 48px $font-raleway
-      color $col-white
-    p
-      font 700 14px/36px $font-raleway
-      color $col-white
-      letter-spacing 1px
   li,li.active
     border 3px solid $col-white
     width 16px
@@ -306,10 +333,13 @@ ul
         left 500px
     &:first-child .min-pre
       background url("../img/home-img-slide-1.jpg") no-repeat center top
+      background-size cover
     &:nth-child(2) .min-pre
       background url("../img/home-img-slide-2.jpg") no-repeat center top
+      background-size cover
     &:last-child .min-pre
       background url("../img/home-img-slide-3.jpg") no-repeat center bottom
+      background-size cover
 ///-----------------------------
 .begin-startup
   padding-top 100px
@@ -324,6 +354,7 @@ ul
         margin-left 97px
       &:hover > .feat-ico
         background $col-orange
+        transition background .5s ease
       &:nth-child(1)
         .feat-ico:before
           background-position -5px -5px
@@ -367,15 +398,19 @@ ul
     > p
       margin-left 100px
   figure
-    margin 0 13px 0 13px
-    .orange-active
-      border 5px solid $col-orange
-      border-radius 50%
-      box-sizing border-box
+    margin 0
   .carousel.slide
     margin-top 55px
     .carousel-inner
       line-height 270px
+      ol
+        list-style none
+        margin 0
+        padding 0
+        &>li:hover img[alt="worker"]
+          border 5px solid $col-orange
+          border-radius 50%
+          box-sizing border-box
   .carousel-indicators
     li
       border 1px solid $col-gray
@@ -491,18 +526,28 @@ ul
     p
       margin 0
     .price-name
-      font 700 20px/24px $font-raleway
-      color $col-blackblue
+      @extend .article-head
+      display inline-block
+      font-weight 700
       margin-top 30px
+      position relative
+      &:before
+        content ""
+        display block
+        width 38px
+        height 1px
+        position absolute
+        bottom -11px
+        left 4px
+        background $col-orange
     .price-term
       color $col-gray-25
       font 500 18px/24px $font-raleway
       padding 20px 0
       border-top 1px solid $col-whiteblue-10
       border-bottom 1px solid $col-whiteblue-10
-      .symb
+      > .symb
         padding 21px 0
-        border-top 1px solid $col-orange
         font 500 18px/24px $font-raleway
         color $col-orange
     .features
@@ -533,26 +578,23 @@ ul
     padding 30px
 //--------------------------------
 .special-agreement
-  padding 100px 0 0
-  .container
-    border-bottom 1px solid $col-bordergray
-    padding-bottom 90px
-  .article-head
+  padding 100px 0
+  .section-head
     font-weight 500
     >span
       color $col-orange
-  .article-subhead
+  .section-subhead
     margin-bottom 30px
   button
     &:first-child
       margin-right 20px
 //------------------------------
 .main-footer
-  padding-top 75px
   position relative
   .container
-    padding-bottom 80px
+    padding 75px 0
     border-bottom 1px solid $col-bordergray
+    border-top 1px solid $col-bordergray
     &>*
       position relative
       z-index 2
@@ -576,9 +618,9 @@ ul
       z-index 1
       bottom -5 px
       width 502 px
-    p.gray-nav
+    .a-info
       padding 10px 0 55px
-  .feature-head
+  .article-head
     font-size 18px
     margin 0 0 15px
   .logo
@@ -625,20 +667,9 @@ ul
 .blog-greet-main
   background url("../img/home-img-slide-1.jpg") no-repeat center 40%
   height 310px
-  .blog-greet
-    > h2
-      font 700 48px $font-raleway
-      color $col-white
-    > p
-      font 700 14px/36px $font-raleway
-      color $col-white
-      letter-spacing 1px
 //----------------------------------
 .blog-container-main
-  padding 100px 0 0
-  .right-bar.col-lg-3
-    @media (max-width 1199px)
-      order -1
+  padding 100px 0
   .blogs-inner
     margin 0
     padding 0
@@ -694,7 +725,6 @@ ul
       li
         margin 0
     .cat-nav
-      text-decoration none
       font 400 13px/36px $font-karla
       letter-spacing 1px
       display block
@@ -713,7 +743,6 @@ ul
     .post-head
       font 700 15px $font-karla
       color $col-blackblue
-      text-decoration none
     .post-wrap
       padding 11px 0 11px 30px
     .post-desc
@@ -726,10 +755,10 @@ ul
       margin-bottom 30px
     &.tags
       ul>li
-        margin-bottom 10px
+        margin 5px
+        flex-grow 1
       .aside-tag
         display block
-        text-decoration none
         padding 0 15px
         max-height 40px
         font 400 13px/40px $font-karla
@@ -740,8 +769,6 @@ ul
           background $col-blackblue
   .blog-nav
     clear both
-    border-bottom 1px solid $col-bordergray
-    padding-bottom 100px
     .pg-link
       font 700 18px/42px $font-karla
       background $col-blue
@@ -760,8 +787,6 @@ ul
       margin-right 10px
 //-----------------------------
 .blog-post
-  .blog-container-main>.container
-    border-bottom 1px solid $col-bordergray
   .blog-block
     border-bottom 1px solid $col-bordergray
     .author-block
@@ -775,8 +800,6 @@ ul
   .comment
     padding 45px 0
     border-bottom 1px solid $col-bordergray
-  .new-comment
-    padding-bottom 100px
   .new-comment-form
     max-width 827px
     margin 0
@@ -801,7 +824,7 @@ ul
 .about-company
   > .container
     margin-top 100px
-  .article-head
+  .section-head
     margin-top 0
   .article-desc
     max-width 530px
